@@ -17,7 +17,6 @@ st.set_page_config(layout="wide")
 # Initialize settings
 def initialize_setting():
     Settings.embed_model = NVIDIAEmbedding(model="nvidia/nv-embedqa-e5-v5", truncate="END")
-
     Settings.llm = NVIDIA(model="meta/llama-3.1-70b-instruct")
     Settings.text_splitter = SentenceSplitter(chunk_size=600)
 
@@ -43,7 +42,7 @@ def generate_default_response():
 # Main function to run the Streamlit app
 def main():
     set_environment_variables()
-    initialize_settings()
+    initialize_setting()
 
     col1, col2 = st.columns([1, 2])
     
