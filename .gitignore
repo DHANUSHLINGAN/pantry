@@ -1,0 +1,7 @@
+nvivlm
+_pycache_
+.milvus_llamaindex.db.lock
+volumes
+gpgkey
+milvus_llamaindex.db
+run
