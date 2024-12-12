@@ -1,7 +1,9 @@
 nvivlm
-_pycache_
+__pycache__
 .milvus_llamaindex.db.lock
 volumes
 gpgkey
 milvus_llamaindex.db
 run
+docker-compose.yml
+standalone_embed.sh

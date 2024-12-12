@@ -37,7 +37,7 @@ services:
       retries: 3
 
   standalone:
-    container_name: milvus-stand
+    container_name: milvus-standalone
     image: milvusdb/milvus:v2.5.0-beta-gpu
     command: ["milvus", "run", "standalone"]
     security_opt:
@@ -60,6 +60,20 @@ services:
     depends_on:
       - "etcd"
       - "minio"
+
+  streamlit-app:
+    container_name: streamlit-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - "8501:8501"
+    depends_on:
+      - "standalone"
+    command: ["streamlit", "run", "app.py"]
 
 networks:
   default:
