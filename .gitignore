@@ -7,3 +7,4 @@ milvus_llamaindex.db
 run
 docker-compose.yml
 standalone_embed.sh
+.env
